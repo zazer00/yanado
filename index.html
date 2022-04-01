@@ -1,1061 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>    
     <link rel="shortcut icon" href="icons/favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>롯데월드</title>
-    <script>history.scrollRestoration = "manual"</script>  
+    <title>야나두</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            
-                $('#footer_top_bt').click(function(){
-                    $('body,html').animate({'scrollTop':'0'})
-                })
-                $(window).scroll(function(){
-                    sc = $(window).scrollTop();
-                    $('#sc').text(sc)
-                    if(sc >= 200){
-                        $('header').css({'position':'fixed'})
-                        
-                    }
-                    else if(sc < 200){
-                        $('header').css({'position':'absolute'})
-                    }
-                    if(sc>=400){
-                        $('#event>h2').delay(200).animate({'marginTop':'130px','opacity':'1'},500)
-                        $('#event>h4').delay(300).animate({'marginTop':'20px','opacity':'1'},500)
-                        $('#event>ul').animate({'marginTop':'60px','opacity':'1'},800)
-                        $('#event>button').animate({'marginTop':'30px','opacity':'1'},800)
-                    }
-                    if(sc >= 1300){
-                        $('#parade>h2').animate({'marginTop':'120px','opacity':'1'},500)
-                        $('#parade>p').animate({'marginTop':'30px','opacity':'1'},500)
-                        $('#parade>ul').animate({'marginTop':'160px','opacity':'1'},500)
-                    }
-                    if(sc >= 2400){
-                        $('#attration>h2').animate({'marginTop':'100px','opacity':'1'})
-                        $('#attration_bt').animate({'marginTop':'0px','opacity':'1'})
-                        $('#attration ul').animate({'marginTop':'120px','opacity':'1'})
-
-                    }
+        $('#popup_tit>img').click(function(){
+            $('#popup').css({'display':'none'})
+        })    
 
 
-                    
-                    if(sc >= 4400){
-                        $('footer>#footer_top_bt_quick').css({'position':'absolute','bottom':'500px'})
-                    }
-                    else if(sc < 4400){
-                        $('footer>#footer_top_bt_quick').css({'position':'fixed','bottom':'100px'})
-                    }
-
-                })
-                $('#op_time').animate({'marginTop':'0px','opacity':'1'},400)
-                
-                
-
-
-            $('#popup>img').click(function(){
-                $('#popup').css({'display':'none'})
-            })
-            $('#popup_txt>input').click(function(){
-                $('#popup').css({'display':'none'})
-            })
-            $('#header2_menu>li').mouseenter(function(){
-                $(this).children().stop().slideDown()
-            })
-            $('#header2_menu>li').mouseleave(function(){
-                $(this).children().stop().slideUp()
-            })
-            $('#attration_bt1').click(function(){
-               $(this).css({'border':'1px solid #550adf','color':'#550adf'})
-               $(this).siblings().css({'border':'2px solid #c4c4c4','color':'#000'})
-               $('#attration_box1').show().siblings().hide()
-
-
-            })
-            $('#attration_bt2').click(function(){
-               $(this).css({'border':'1px solid #550adf','color':'#550adf'})
-               $(this).siblings().css({'border':'2px solid #c4c4c4','color':'#000'})
-               $('#attration_box2').show().siblings().hide()
-
-
-            })
-            $('#attration_bt3').click(function(){
-               $(this).css({'border':'1px solid #550adf','color':'#550adf'})
-               $(this).siblings().css({'border':'2px solid #c4c4c4','color':'#000'})
-               $('#attration_box3').show().siblings().hide()
-
-
-            })
-
-            $('#slide_btn>ul>li').click(function(){
-                $(this).css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'})
-                $(this).siblings('li').css({'opacity':'0.2'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
-                $('#slide_img_box').animate({'marginLeft':$(this).index()*-100+'%'})
-            })
-
-
-
-        }) //전체괄호
-
+        })
 
 
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-        *{margin: 0;padding: 0;list-style: none;font-family: 'Noto Sans KR', sans-serif;}
-        body{position: relative;}
-        #fixde_bg{width: 100%;height: 147px;}
-        header{width: 100%;height: 147px;position: absolute;top: 0;left: 0;right: 0;z-index: 101;background-color: #fff;transition: 0.5s;}
-        #header1{width: 100%;height: 46px;border-bottom: 1px solid #e1e1e1;background-color: #f8f8f8;}
-        #header1_box{width: 1410px;height: 46px;margin: auto;}
-        #header1_leftmenu{width: 510px;height: 46px;float: left;}
-        #header1_leftmenu>li{float: left;line-height: 46px;font-size: 12px;letter-spacing: -1.5px;padding-right: 15px;background: url(icons/header_gnb_border.jpg)right center no-repeat;margin-right: 15px;color: #6a716f;}
-        #header1_leftmenu>li:last-child{background: url();}
-        #header1_leftmenu>li>img{ vertical-align: middle;margin-top: -3px;margin-right: 3px;}
-        #header1_rightmenu{height: 46px;float: right;}
-        #header1_rightmenu>li{float: left;line-height: 46px;margin-left: 10px;font-size: 14px;color: #555555;}
-        #header1_rightmenu>li:nth-child(1){background: url(icons/header_gnb_border2.jpg)right center no-repeat;padding-right: 10px;}
-        #header1_rightmenu>li:nth-child(3) {background: url(icons/header_gnb_border2.jpg)right center no-repeat;padding-right: 10px;margin-left: 20px;}
-        #header1_rightmenu>li>img{vertical-align: middle;}
-        .fw900{font-weight: 700;}
-        #header2{width: 100%;height: 99px;border-bottom: 1px solid #e1e1e1;}
-        #header2
-        #header2_box{width: 1410px;height: 99px;margin: auto;}
-        #logo{float: left;height: 72px;margin-top: 13px;}
-        #header2_icon_menu{height: 72px;float: right;margin-top: 25px;}
-        #header2_icon_menu>li{display: inline-block;margin-left: 15px;text-align: center;vertical-align: bottom;}
-        #header2_icon_menu>li>h4{color: #590ee4;margin-top: 5px;font-weight: 500;}
-        #header2_menu { width: 800px;height: 99px;line-height: 99px;float: left; margin-left: 100px;text-align: center;}
-        #header2_menu>li { display: inline-block;font-size: 18px;font-weight: 500;margin: 0 30px;cursor: pointer;}
-        #header2_menu>li:hover{border-bottom: 1px solid #590ee4;}
-        #header2_menu>li:nth-child(1)>.sub_wrap{display: none;}
-        #header2_menu>li:nth-child(2)>.sub_wrap{display: none;}
-        #header2_menu>li:nth-child(3)>.sub_wrap{display: none;}
-        #header2_menu>li:nth-child(4)>.sub_wrap{display: none;}
-        #header2_menu>li:nth-child(5)>.sub_wrap{display: none;}
-        #header2_menu>li>.sub_wrap>.sub_box>.sub_box2>ul>li:hover{color: #590ee4;border-bottom: 1px solid #590ee4;}
-        #header2_menu>li:nth-child(1)>.sub_wrap>.sub_box>.sub_box2>ul>li:nth-child(5){line-height: 24px;padding: 10px 0 ;}
-        #header2_menu>li>.sub_wrap{width:100%;height: 335px;background-color: #fff;position: absolute;left: 0;top: 147px;}
-        .sub_box{width: 1410px;height: 335px;margin: auto;}
-        .sub_box1{width: 240px;height: 335px;float: left;text-align: left;border-right: 1px solid rgb(160, 157, 157);}
-        .sub_box1>img{margin-top: 50px;}
-        .sub_box1>h3{margin-top: -60px;font-size: 11px;color: rgb(146, 143, 143);}
-        .sub_box1>h4{margin-top: -80px;font-size: 18px;font-weight: 200;}
-        .sub_box1>h5{margin-top: -80px;;font-size: 18px;}
-        .sub_box1>h6{margin-top: -20px;font-size: 22px;}
-        .sub_box2{width: 300px;height: 335px;float: left;text-align: left;line-height: 55px;padding: 30px;box-sizing: border-box;}
-        .sub_box2>ul{}
-        .sub_box2>ul>li{border-bottom: 1px solid rgb(160, 157, 157);font-size: 20px;}
-        .sub_box2>ul>li:last-child{border: none;}
-        .sub_box3{width: 465px;height: 335px;float: right;background: url(icons/gnb_openDiv_bg.jpg)0 0 no-repeat;text-align: center;position: relative;}
-        .sub_box3>h3{line-height: 25px;text-align: left;margin-left: 200px;margin-top: 20px;color: #fff;}
-        .sub_box3>h3>span{color: orange;}
-        .sub_box3>ul{text-align: left;margin-left: 200px;margin-top: 20px;}
-        .sub_box3>ul>li{line-height: 30px;color: #fff;font-size: 15px;}
-        .sub_box3>.sub_box3_arrow{position: absolute;bottom: 100px;right: 200px;}
-        .sub_box3>.sub_box3_img{position: absolute;bottom: 0px;right: 0;}
-        /*  */
-        #slide{width: 100%;position: relative;overflow: hidden;}
-        #slide_img_box{width: 800%;overflow: hidden;}
-        #slide_img_box>li{width: 12.5%;float: left;}
-        #slide_img_box>li>img{width: 100%;}
-        #slide_prev_btn{position: absolute;top: 0;bottom: 0;left: 20px;margin: auto;}
-        #slide_next_btn{position: absolute;right: 20px;top: 0;bottom: 0;margin: auto;}
-        #slide_btn{position: absolute;left: 0;right: 0;bottom: 30px;width: 230px;height: 40px;background-color: rgba(0,0,0,0.5);border-radius: 50px;margin: auto;}
-        #slide_btn>ul{width: 190px;height: 40px;float: left;text-align: center;line-height: 40px;}
-        #slide_btn>ul>li{display: inline-block;opacity: 0.2;cursor: pointer;}
-        #slide_btn>ul>li:nth-child(1){opacity: 1;}
-        #slide_pause{width: 40px;height: 40px;float: right;}
-        /*  */
-        #op_time{width: 1170px;height: 80px;line-height: 80px;text-align: center;margin: auto;margin-top: 50px;border-bottom: 1px solid #e1e1e1;opacity: 0;}
-        #op_time>img{vertical-align: middle;margin-right: 10px;}
-        #op_time>h3{display: inline-block;font-size: 16px;margin-right: 10px;vertical-align: middle;font-weight: 700;}
-        #op_time>h4{display: inline-block;vertical-align: middle;font-size: 16px;font-weight: 700;}
-        /*  */
-        #event{width: 100%;height: 880px;text-align: center;}
-        #event>button{width: 220px;height: 55px;background-color: #5c10e6;border-radius: 40px;margin: auto;margin-top: 80px;border: none;color: #ffff;font-size: 18px;opacity: 0;}
-        .fw100{font-weight: 100;}
-        #event>h2{margin-top: 180px;opacity: 0;}
-        #event>h2>span{font-size: 40px;}
-        #event>h4{margin-top: 70px;font-weight: 300;font-size: 20px;color: #555555;opacity: 0;}
-        #event>ul{width: 1208px;height: 352px;margin: auto;margin-top: 110px;opacity: 0;}
-        #event>ul>li{width: 300px;height: 350px;border: 1px solid #dedede;float: left;box-sizing: border-box;position: relative;padding: 50px;cursor: pointer;}
-        #event>ul>li>img{width: 100%;}
-        #event>ul>li>h5{margin-right: 100px;font-size: 17px;color: #5c10e6;font-weight: 500;}
-        #event>ul>li>h3{font-size: 20px;margin-top: 20px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;letter-spacing: -1.5px;transition: 0.5s;}
-        .event_cover{width: 300px;height: 350px;border: 2px solid #5c10e6;   position: absolute;left: -1px;top: 0px;box-sizing: border-box;box-shadow: 20px 20px 20px rgba(0,0,0,0.2);transition: 0.5s;opacity: 0;}
-        #event>ul>li:hover>.event_cover{opacity: 1;}
-        #event>ul>li:hover>h3{color: #5c10e6;}
-        /*  */
-        #parade{width: 100%;height: 1070px;background: url(images/mainCon2_bg_20220103.jpg)center no-repeat;background-size: cover;text-align: center;overflow: hidden;position: relative;}
-        #parade>h2{font-size: 40px;color: #fff;margin-top: 170px;opacity: 0;}
-        #parade>p{margin-top: 80px;font-size: 17px;color: #fff;opacity: 0;}
-        #parade>ul{width: 3278px;height: 372px;margin-top: 220px;opacity: 0;}
-        #parade>ul>li{width: 276px;height: 350px;float: left;margin: 11px;position: relative;transition: 0.5s;cursor: pointer;}
-        #parade>ul>li:hover{box-shadow: 20px 20px 20px rgba(0,0,0,0.5);transform: scale(1.1);}
-        .gradiant_box{width: 276px;height: 350px;background: linear-gradient(transparent,black);position: absolute;left: 0;top: 0;bottom: 0;margin: auto;}
-        .gradiant_box>h4{position: absolute;left: 20px;bottom: 20px;color: #fff;font-size: 17px;font-weight: 300;transition: 0.5s;}
-        .gradiant_box:hover>h4{font-weight: 700;}
-        #parade_drag{width: 150px;height: 30px;margin: auto;margin-top: 60px;position: relative;}
-        #parade_drag>img{position: absolute;left: 0;top: 0;bottom: 25px;margin: auto;}
-        .drag_line{width: 150px;height: 5px;background-color: #fff;margin-top: 15px;border-radius: 3px;}
-        #parade_bt1{width: 220px;height: 60px;background-color: #fff;border: none;border-radius: 30px;position: absolute;bottom: 100px;left: 720px;font-size: 17px;color: #550adf;font-weight: 300;transition: 0.5s;cursor: pointer;}
-        #parade_bt1:hover{background: transparent;border: 2px solid #fff;color: #fff;}
-        #parade_bt2{width: 220px;height: 60px;border: 2px solid #fff;border-radius: 30px;;position: absolute;bottom: 100px;right: 720px;background: transparent;font-size: 17px;color: #fff;font-weight: 300;transition: 0.5s;cursor: pointer;}
-        #parade_bt2:hover{background-color: #fff;color: #550adf;}
-        /*  */
-        #attration{width: 100%;height: 1176px;background: url(images/mainCon3_bg.jpg);overflow: hidden;text-align: center;position: relative;}
-        #attration>h2{font-size: 36px;font-weight: 200;margin-top: 150px;opacity: 0;}
-        #attration_bt{margin-top: 50px;opacity: 0;}
-        #attration_bt1{width: 115px;height: 45px;background: transparent;border: 1px solid #550adf;border-radius: 30px;color:#550adf;position: absolute;top: 180px;left: 740px;cursor: pointer;}
-        #attration_bt2{width: 145px;height: 45px;background: transparent;border: 1px solid #c4c4c4;border-radius: 30px;position: absolute;top: 180px;left: 870px;color:#707070;cursor: pointer;}
-        #attration_bt3{width: 160px;height: 45px;background: transparent;
-        border: 1px solid #c4c4c4;border-radius: 30px;position: absolute;top: 180px;left: 1030px;color: #707070;cursor: pointer;}
-        #attration_box1{}
-        #attration_box2{display: none;}
-        #attration_box3{display: none;}
-        #attration ul{width: 1175px;height: 745px;margin: auto;margin-top: 170px;opacity: 0;}
-        #attration ul>li{cursor: pointer;}
-        #attration ul>li>h4{text-align: left;margin-top: 15px;margin-left: 30px;font-size: 20px;font-weight: 700;}
-        #attration ul>li>p{text-align: left;margin-top: 10px;margin-left: 30px;font-size: 15px;color: #6b6d6b;}
-        #attration ul>li:nth-child(1){width: 574px;height: 349px;float: left;background-color: #fff;margin-right: 23px;margin-bottom: 22px;}
-        #attration ul>li:nth-child(1):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(1):hover>p{color: #fff;}
-        #attration ul>li:nth-child(1)>img{width: 100%;}
-        #attration ul>li:nth-child(2){width: 278px;height: 349px;float: left;background-color: #fff;margin-right: 22px;margin-bottom: 22px;overflow: hidden;}
-        #attration ul>li:nth-child(2)>div{width: 280px;height: 245px;background: url(images/20180619061833985.jpg)left 0 no-repeat ;}
-        #attration ul>li:nth-child(2):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(2):hover>p{color: #fff;}
-        #attration ul>li:nth-child(3){width: 278px;height: 349px;float: left;background-color: #fff;margin-right: 0;margin-bottom: 22px;}
-        #attration ul>li:nth-child(3)>img{width: 100%;}
-        #attration ul>li:nth-child(3):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(3):hover>p{color: #fff;}
-        #attration ul>li:nth-child(4){width: 278px;height: 349px;float: left;background-color: #fff;margin-right: 23px;}
-        #attration ul>li:nth-child(4)>img{width: 100%;}
-        #attration ul>li:nth-child(4):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(4):hover>p{color: #fff;}
-        #attration ul>li:nth-child(5){width: 278px;height: 349px;float: left;background-color: #fff;margin-right: 22px;}
-        #attration ul>li:nth-child(5)>img{width: 100%;}
-        #attration ul>li:nth-child(5):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(5):hover>p{color: #fff;}
-        #attration ul>li:nth-child(6){width: 574px;height: 349px;float: left;background-color: #fff;margin-right: 0;}
-        #attration ul>li:nth-child(6):hover{background-color: #550adf;color: #fff;}
-        #attration ul>li:nth-child(6):hover>p{color: #fff;}
-        #attration_morebt1{width: 240px;height: 60px;background: #550adf;border: 1px solid #550adf;border-radius: 30px;color: #fff;font-size: 17px;margin-top: 20px;margin-right: 10px;}
-        #attration_morebt2{width: 240px;height: 60px;background: transparent;border: 2px solid #550adf;border-radius: 30px;color: #550adf;font-size: 17px;margin-top: 20px;margin-left: 10px;}
-        /*  */
-        #special{width: 1170px;height: 1250px;margin: auto;margin-top: 30px;}
-        #special_title{width: 1170px;height: 310px;text-align: center;overflow: hidden;}
-        #special_title>h2{margin-top: 120px;font-weight: 200;font-size: 38px;}
-        #special_title>h3{margin-top: 10px;font-size: 30px;font-weight: 700;}
-        #special_title>p{margin-top: 20px;}
-        #special_list{width: 1170px;height: 490px;overflow: hidden;}   
-        #special_list>h4{margin-top: 40px;margin-left: 20px;font-size: 30px;}
-        #special_list>ul{width: 1170px;height: 300px;margin-top: 55px;}
-        #special_list>ul>li{float: left;margin-right: 20px;cursor: pointer;}
-        #special_list>ul>li>img{transition: 0.5s;}
-        #special_list>ul>li:hover>img{box-shadow: 10px 10px 10px rgba(0,0,0,0.2);}
-        #special_list>ul>li:hover>p{color: #550adf;font-weight: 500;}
-        #special_list>ul>li>p{margin-top: 20px;font-size: 20px;transition: 0.5s;}
-        #special_list>ul>li:last-child{margin-right: 0;}
-        #special_news{width: 574px;height: 260px;float: left;border: 1px solid #ccc; padding: 40px;box-sizing: border-box;margin-top: 20px;}
-        #special_news>table{width: 574px;height: 150px;margin-top: 20px;border-collapse: collapse;}
-        #special_news>table tr:nth-child(1){width: 25%;}
-        #special_news>table tr:nth-child(2){width: 25%;}
-        #special_news>table tr:nth-child(3){width: 20%;}
-        #special_news>table tr:nth-child(4){width: 20%;}
-        #special_news>table tr:nth-child(1) td{height: 37px;}
-        #special_news>table tr:nth-child(2) td{height: 37px;}
-        #special_news>table tr:nth-child(3) td{height: 37px;}
-        #special_news>table tr:nth-child(4) td{height: 37px;}
-        #special_news>table tr td p{width: 90%;overflow: hidden; white-space: nowrap;text-overflow: ellipsis;}
-        #special_news>table tr td:nth-child(1){width: 60%;height: 20px;}
-        #special_news>table tr td:nth-child(2){width: 40%;height: 20px;font-size: 13px;color: #6b6d6b;}
-        #special_mobile{width: 574px;height: 260px;float: right;background-color: #ccc;margin-top: 20px;}
-        /*  */
-        footer{width: 100%;height: 390px;border-top: 1px solid #ccc;position: relative;}
-        #footer1{width: 1170px;height: 116px;margin: auto;overflow: hidden;border-bottom: 1px solid #ccc;}
-        #footer1_menu1{width: 1000px;height: 116px;float: left;;overflow: hidden;}
-        #footer1_menu1>li{float: left;line-height: 116px;margin-right: 20px;color: #959595;}
-        #footer1_menu1>li:first-child{color: red;}
-        #footer1_menu2{width: 120px;height: 116px;float: right;}
-        #footer1_menu2>li{width: 30px;height: 30px;border-radius: 30px;float: left;line-height: 116px;margin-top: 10px;margin-right: 10px;}
-        #footer2{width: 1170px;height: 274px;margin: auto;}
-        #footer_logo { width: 80px;height: 80px;float: left;margin-top: 25px;}
-        #footer_logo>img { width: 100%;}
-        #footer_center {width: 570px;height: 180px;margin-left: 40px;margin-top: 25px;float: left; position: relative;} 
-        #footer_center>p{color: #959595;font-size: 11px;margin-top: 100px;}
-        #footer_center_text1>li{float: left;font-size: 13px;color: #959595;}
-        #footer_center_text1>li::after{content: "|";color: #ccc;margin-left: 10px;margin-right: 10px;}
-        #footer_center_text1>li:last-child:after{content: "";}
-        #footer_center_text2{margin-top: 30px;}
-        #footer_center_text2>li{float: left;font-size: 13px;color: #959595;}
-        #footer_center_text2>li::after{content: "|";color: #ccc;margin-right: 10px;margin-left: 10px;}
-        #footer_center_text2>li:last-child:after{content: "";}
-        #footer_center_text3{margin-top: 30px;position: absolute;bottom: 40px;left: 50px;}
-        #footer_center_text3>img{width: 40px;height: 35px;position: absolute;left: -50px;bottom: -20px;}
-        #footer_center_text3>li{font-size: 10px;float: left;color: #959595;}
-        #footer_center_text3>li::after{content: '|';margin: 10px;color: #959595;}
-        #footer_center_text3>li:last-child:after{content: '';}
-        #footer_center_text4{position: absolute;bottom: 20px;left: 50px;}
-        #footer_center_text4>li{font-size: 10px;float: left;color: #959595;}
-        #footer_center_text4>li::after{content: "|";margin: 10px;color: #959595;}
-        #footer_center_text4>li:last-child:after{content: '';}
-        #footer_center_text5{position: absolute;right: 140px;bottom: 30px;}
-        #footer_center_text5>li{float: left;font-size: 11px;color: #959595;}
-        #footer_center_text5>img{width: 40px;height: 40px;position: absolute;left: -50px;bottom: -12px;}
-        #footer_right { width: 380px;height: 180px;margin-top: 25px;float: right;}
-        #footer_right>select{width: 210px;height: 45px;float: right;color: #959595;font-size: 14px;}
-        #footer_last_img{width: 360px;height: 85px;float: right;margin-top: 50px;}
-        #footer_last_img>img{width: 100%;}
-        #popup{width: 500px;height: 280px;border: 4px solid #651eec;position: absolute;top: 150px;left: 100px;z-index: 999999;background-color: #fff;text-align: center;}
-        #popup>img{position: absolute;right: 10px;top: 10px;}
-        #popup>h2{margin-top: 50px;}
-        #popup>h3{margin-top: 15px;font-weight: 400;font-size: 15px;}
-        #popup>h3>span{font-weight: 600;font-size: 16px;}
-        #popup>button{width: 280px;height: 50px;background-color: #651eec;border: none;color: #fff;border-radius: 30px;font-size: 18px;margin-top: 20px;}
-        #popup_txt{position: absolute;left: 5px;bottom: 5px;font-size: 12px;}
-        #popup_txt>input{margin-right: 5px;vertical-align: middle;}
-        #footer_top_bt{width: 50px;height: 60px;position: absolute;right: 150px;top: -70px;text-align: center;cursor: pointer;}
-        #footer_top_bt>div{width: 2px;height: 30px;margin: auto;background-color: #000;}
-        #sc{font-size: 100px;position: fixed;background-color: red;left: 0;top: 0;color: #fff;z-index: 9999999;display: none;}
-        #footer_top_bt_quick{width: 50px;height: 50px;border-radius: 50px;background-color: rgb(206, 42, 119);color: #fff;text-align: center;padding: 10px 0;box-sizing: border-box;position: absolute;bottom: 500px;;right: 150px;cursor: pointer;}
-        
-    </style></head><body>
-        <div id="popup">
-            <img src="icons/header_srch_close_btn.png" alt="">
-           <h2>특별방역지침에 따른 파크 이용 안내</h2>
-           <h3>
-               <span>적용기간</span>
-             22년 01월 17(월)~22년 02월 06일(일)
-            </h3> 
-            <button>자세히보기</button>
-            <div id="popup_txt"><input type="checkbox" name="" id="">오늘 하루 보지않기
-         </div>
 
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    *{margin: 0;padding: 0;list-style: none;font-family: 'Inter', sans-serif;}
+
+    #pop_banner1{width: 150px;height: 245px;position: fixed;right: 60px;top: 124px;z-index: 99999;transition: 0.5s;cursor: pointer;}
+    #pop_banner1:hover{transform: scale(1.1);}
+    #pop_banner1>img{width: 100%;}
+    #pop_banner2{width: 180px;height: 60px;position: fixed;left: 80px;bottom: 90px;z-index: 99999;transition: 0.5s;cursor: pointer;border-radius: 10px;}
+    #pop_banner2:hover{transform: scale(1.1);}
+    #pop_banner2>img{width: 100%;}
+    /*  */
+    header{width: 100%;height: 90px;overflow: hidden;background-color: #fff;position: fixed;z-index: 9999;}
+    #header_box{width: 1200px;height: 70px;margin: auto;margin-top: 10px;}
+    #logo{width: 80px;height: 20px;margin-top: 25px;float: left;}
+    #logo>img{width: 100%;vertical-align: top;}
+    #heaber_menu{width: 700px;height: 20px;line-height: 20px;margin-top: 25px;margin-left: 40px;float: left;}
+    #heaber_menu>ul{width: 700px;height: 20px;}
+    #heaber_menu>ul>li{float: left;margin-right: 74px;font-size: 15px;font-weight: 600;position: relative;transition: 0.5s;}
+    #heaber_menu>ul>li:hover{border-bottom: 1px solid #000;transform: scale(1.1);}
+    #heaber_menu>ul>li>img{position: absolute;left: 0;top: -20px;}
+    #heaber_menu>ul>li:last-child{margin-right: 0;}
+    #heaber_login{height: 35px;float: right;margin-top: 10px;overflow: hidden;line-height: 35px;}
+    #heaber_login>ul{height: 35px;float: left;margin-top: 4px;}
+    #heaber_login>ul>li{float: left;}
+    #heaber_login>ul>li>img{height: 35px;}
+    #heaber_login>ul>li:last-child{width: 77px;height: 35px;background-color: #fded52;border-radius: 3px;text-align: center;float: left;}
+    #fixde_area{width: 100%;height: 90px;}
+    /*  */
+    #slide{width: 100%;height: 600px;background: url(images/bigbnr_pc_firstSale.png)center no-repeat;}
+    #slide_box{width: 1200px;height: 600px;margin: auto;position: relative;}
+    #priv_btn{position: absolute;left: -100px;top: 270px;}
+    #next_btn{position: absolute;right: -100px;top: 270px;}
+    #slide_box>ul{width: 300px;height: 30px;position: absolute;left: 0;right: 0;bottom: 50px;margin: auto;text-align: center;}
+    #slide_box>ul>li{width: 10px;height: 10px;border-radius: 12px;opacity: 0.5;display: inline-block;background-color: #ccc;margin: 3px;margin-top: 10px;}
+    #slide_box>ul>li:first-child{opacity: 1;background-color: #fff;width: 60px;}
+    /*  */
+    #university{width: 100%;height: 583px;background-color: #f7f7fc;overflow: hidden;margin-top: 30px;}
+    #university_box{width: 1200px;height: 500px;margin: auto;margin-top: 42px;position: relative;}
+    #university_box>h2{font-size: 40px;margin-top: 50px;letter-spacing: -2px;}
+    #university_box>p{font-size: 20px;margin-top: 20px;font-weight: 500;}
+    #university_box>ul{width: 1200px;height: 120px;margin-top: 60px;}
+    #university_box>ul>li{width: 380px;height: 120px;float: left;margin-right: 30px;background-color: #fff;border-radius: 5px;box-shadow: 0 0 10px rgba(0,0,0,0.2);padding-left: 30px;padding-top: 30px;box-sizing: border-box;position: relative;} 
+    #university_box>ul>li:last-child{margin-right: 0;}
+    #university_box>ul>li>h4{font-size: 18px;line-height: 34px;font-weight: 400;}
+    #university_box>ul>li>img{width: 40px;width: 40px;position: absolute;right: 30px;bottom: 20px;}
+    #university_box_img{width: 500px;height: 290px;position: absolute;right: 0;top: -50px;}
+    #university_box_img>img{width: 500px;height: 100%;}
+    /*  */
+    #best_product{width: 100%;height: 970px;background-color: #fff;}
+    #best_product_box1{width: 1200px;;margin: auto;margin-top: 80px;}
+    #best_product_box1>h2{line-height: 100px;}
+    #best_product_box1>ul{width: 100%;overflow: hidden;}
+    #best_product_box1>ul>li{width: 277px;height: 270px;overflow: hidden;float: left;margin-right: 30px;}
+    #best_product_box1>ul>li:last-child{margin-right: 0;}
+    #best_product_box1>ul>li>img{width: 100%;border-radius: 10px;}
+    #best_product_box1>ul>li>h4{font-size: 15px;font-weight: 700;margin-top: 15px;}
+    #best_product_box1>ul>li>h5{font-size: 13px;margin-top: 10px;color: #828296;}
+    #best_product_box2 { width: 1200px;margin: auto;margin-top: 80px;}
+    #best_product_box2>h2{line-height: 100px;}
+    #best_product_box2>ul{width: 100%;overflow: hidden;}
+    #best_product_box2>ul>li{width: 277px;height: 270px;overflow: hidden;float: left;margin-right: 30px;}
+    #best_product_box2>ul>li:last-child{margin-right: 0;}
+    #best_product_box2>ul>li>img{width: 100%;border-radius: 10px;}
+    #best_product_box2>ul>li>h4{font-size: 15px;font-weight: 700;margin-top: 15px;}
+    #best_product_box2>ul>li>h5{font-size: 13px;margin-top: 10px;color: #828296;}
+
+    #banner1{width: 100%;height: 280px;;background: url(images/bnr_mid_pc_item01.png)center bottom no-repeat;text-align: center;background-color: #000;position: relative;}
+    #banner1>ul{width: 70px;height: 15px;position: absolute;right: 400px;top: 30px;}
+    #banner1>ul>li{width: 10px;height: 10px;background-color: #999999;border-radius: 10px;float: left;margin-right: 10px;margin-top: 2px;}
+    #banner1>ul>li:first-child{width: 30px;height: 10px;background-color: #fff;}
+    #banner1>ul>li:last-child{margin-right: 0;}
+    /*  */
+    #top3{width: 1200px;height: 620px;margin: auto;margin-top: 80px;}
+    #top3>h2{line-height: 100px;}
+    #top3>ul{width: 100%;height: 520px;}
+    #top3>ul>li{width: 380px;height: 520px;float: left;margin-right: 30px;background-color: #ccc;border-radius: 15px;position: relative;overflow: hidden;transition: 0.5s;}
+    #top3>ul>li:hover{transform: translate(0,-20px);}
+    #top3>ul>li:nth-child(1){background: url(images/hotbnr_item01.png)0 0 no-repeat;background-size: 380px;}
+    #top3>ul>li:nth-child(2){background: url(images/hotbnr_item02.jpg)0 0 no-repeat;background-size: 380px;}
+    #top3>ul>li:last-child{margin-right: 0;background: url(images/hotbnr_item03.png)0 0 no-repeat;background-size: 380px;}
+    #top3>ul>li>div>h4{width: 80%;position: absolute;left: 0;top: 20px;right: 0;margin: auto;font-size: 20px;color: #fff;}
+    #top3>ul>li:hover>div{top: 0px;}
+    #top3>ul>li>div>button{width: 150px;height: 40px;background-color: #fff;border: none;position: absolute;left: 10%;bottom: 20px;border-radius: 5px;font-size: 12px;font-weight: 500;}
+    #top3_box1{width: 380px;height: 520px;background-color: #fc5d6a;position: absolute;left: 0;top: 380px;border-radius:0 0 15px 15px;}
+    #top3_box2{width: 380px;height: 520px;background-color: #fc5d6a;position: absolute;left: 0;top: 380px;border-radius:0 0 15px 15px;}
+    #top3_box3{width: 380px;height: 520px;background-color: #4fccb6;position: absolute;left: 0;top: 380px;border-radius:0 0 15px 15px;}
+/*  */
+#today{width: 1200px;margin: auto;margin-top: 80px;} 
+#today>h2{}
+#today>ul{width: 100%;margin-top: 30px;}
+#today>ul>li{width: 277px;height: 270px;float: left;;margin-right: 30px;}
+#today>ul>li:last-child{margin-right: 0;}
+#today>ul>li>img{width: 100%;}
+#today>ul>li>h4{font-size: 15px;margin-top: 15px;font-weight: 700;}
+#today>ul>li>h5{font-size: 13px;margin-top: 10px;color: #828296;}
+/*  */
+#banner2{width: 100%;height: 400px;margin: auto;overflow: hidden;position: relative;}
+#banner2>img{width: 1200px;position: absolute;left: 0;right: 0;margin: auto;margin-top: 150px;}
+/*  */
+#story{width: 100%;height: 575px;background-color: #f7f7fc;margin: auto;overflow: hidden;}
+#story_box{width: 1200px;height: 575px;margin: auto;margin-top: 60px;}
+#story_box>h2{}
+#story_box>ul{overflow: hidden;margin-top: 20px;}
+#story_box>ul>li{width: 380px;height: 310px;background-color: #fff;float: left;margin: auto;margin-right: 30px;}
+#story_box>ul>li>img{width: 100%;}
+#story_box>ul>li>h4{margin-top: 15px;font-size: 18px;}
+#story_box>ul>li>h5{margin-top: 10px;font-size: 13px;color: #000;font-weight: 400;}
+#story_box>ul>li:last-child{margin-right: 0;}
+/*  */
+#event{width: 1200px;height: 500px;margin: auto;margin-top: 60px;overflow: hidden;}
+#event>h2{float: left;margin-bottom: 30px;}
+#event>h3{float: right;}
+#event>ul{width: 1200px;height: 500px;overflow: hidden;}
+#event>ul>li{width: 582px;height: 370px;float: left;margin-right: 35px;overflow: hidden;}
+#event>ul>li>h4{margin-top: 20px;font-size: 18px;}
+#event>ul>li>h5{margin-top: 15px;font-size: 11px;color: #828296;}
+#event>ul>li:last-child{margin-right: 0;}
+#event_box1{width: 100%;height: 280px;background: url(images/thumb_1640741570906.jpg) center no-repeat;background-size: 100%;transition: 0.5s;}
+#event_box1:hover{background-size: 110%;}
+#event_box2{width: 100%;height: 280px;background: url(images/event_list__1637654498132.png) center no-repeat;background-size: 100%;transition: 0.5s;}
+#event_box2:hover{background-size: 110%;}
+/*  */
+#category{width: 100%;height: 300px;background-color: #1a1c20;}
+#category_box{width: 1200px;height: 300px;margin: auto;}
+#category_box_left{width: 600px;height: 200px;margin-top: 40px;float: left;position: relative;}
+#category_box_left>img{width: 40px;height: 40px;position: absolute;right: 150px;bottom: -15px;}
+#category_box_left>h4{margin-top: 80px;color: #fff;font-size: 18px;}
+#category_box_left>h3{margin-top: 20px;font-size: 35px;color: #626262;}
+#category_box_left>h3>span{color: #fff;}
+#category_box_left_img{width: 280px;height: 280px;float: right;border-radius: 300px;margin-top: 10px;margin-bottom: 10px;margin-right: 100px;}
+footer{width: 1200px;height: 520px;margin: auto;margin-top: 65px;}
+#footer_left{width: 500px;height: 500px;float: left;margin-top: 10px;}
+#footer_left>h2{margin-top: 100px;font-size: 30px;}
+
+#footer_left>img{width: 100px;height: 30px;margin-top: 40px;}
+
+#footer_left_text1{margin-top: 15px;}
+#footer_left_text1>h4{margin-top: 40px;font-size: 12px;}
+#footer_left_text1>li{font-size: 12px;color: #828296;margin-top: 5px;}
+#footer_left_text2{margin-top: 15px;font-size: 11px;color: #828296;}
+#footer_left_text2>li{margin-top: 5px;}
+/*  */
+
+#footer_right{width: 650px;height: 500px;float: left;margin-top: 10px;position: relative;}
+#footer_right_box1{float: left;}
+#footer_right_box1>h4{font-size: 16px;font-weight: 600;}
+#footer_right_box1>li{margin-top: 35px;font-size: 14px;}
+#footer_right_box2{position: absolute;left: 250px;top: 0;}
+#footer_right_box2>h4{font-size: 16px;font-weight: 600;}
+#footer_right_box2>li{margin-top: 35px;font-size: 14px;}
+#footer_right_box3{float: right;}
+#footer_right_box3>h4{font-size: 16px;font-weight: 600;}
+#footer_right_box3>li{margin-top: 35px;font-size: 14px;}
+#footer_bt{width: 220px;height: 40px;position: absolute;right: 0;bottom: 180px;font-size: 15px;border: 1px solid #999;}
+/*  */
+#footer_right_sns1{width: 80px;height: 30px;position: absolute;right: 180px;bottom: 100px}
+#footer_right_sns1>li{width: 30px;height: 30px;float: left;margin-right: 10px;}
+#footer_right_sns1>li>img{width: 100%;}
+#footer_right_sns2{width: 150px;height: 30px;position: absolute;right: 0;bottom: 100px;}
+#footer_right_sns2>li{width: 30px;height: 30px;float: left;margin-right: 10px;}
+#footer_right_sns2>li:last-child{margin-right: 0;}
+#footer_right_sns2>li>img{width: 100%;}
+#popup{width: 370px;height: 750px;position: absolute;right: 15px;top: 0;z-index: 999999;background-color: #fff;box-shadow: 10px 10px 10px rgba(0,0,0,0.2);text-align: center;}
+#popup>ul{width: 335px;height: 185px;margin: auto;margin-top: 20px;}
+#popup>ul>li{width: 160px;height: 185px;margin-right: 15px;float: left;font-size: 15px;overflow: hidden;}
+#popup>ul>li:last-child{margin-right: 0;}
+.popup_li_img_box{width: 160px;height: 150px;overflow: hidden;}
+.popup_li_img_box>img{width: 100%;transition: 0.5s;}
+.popup_li_img_box>img:hover{transform: scale(1.1);}
+#popup>img{width: 90%;margin-top: 10px;}
+#popup_tit{width: 370px;height: 55px;background-color: #000;color: #fff;text-align: center;}
+#popup_tit>img{width: 20px;height: 20px;position: absolute;right: 10px;top: 15px;cursor: pointer;}
+#popup_tit>p{line-height: 55px;}
+
+</style></head><body>
+    <div id="popup">
+        <div id="popup_tit">
+            <p>즉시 할인 쿠폰 받기!</p>
+            <img src="icons/adn_closed_btn_close_2021.png" alt="" id="popup_close">
         </div>
-    <div id="fixde_bg"></div>
-    <header>
-        
-        <div id="header1">
-            <div id="header1_box">
-                <ul id="header1_leftmenu">
-                    <li><img src="icons/m_link_icon1.gif" alt="">SEOUL SKY</li>
-                    <li><img src="icons/m_link_icon2.gif" alt="">롯데월드 아쿠아리움</li>
-                    <li><img src="icons/m_link_icon3.gif" alt="">김해롯데워터파크</li>
-                </ul>
-                <ul id="header1_rightmenu">
-                    <li>민속박물관</li>
-                    <li>아이스링크</li>
-                    <li class="fw900">Login</li>
-                    <li class="fw900">회원가입</li>
-                    <li class="fw900">KOR <img src="icons/lang_arrow.png" alt=""></li>
-                </ul>
-            </div>
-        </div>
-        <div id="header2">
-            <div id="header2_box">
-                <h1 id="logo"><img src="icons/logo.png" alt=""></h1>
-                <ul id="header2_menu">
-                    <li>즐길거리
-                        <div class="sub_wrap">
-                            <div class="sub_box">
-                                <div class="sub_box1">
-                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
-                                    <h3>2/17(목)</h3>
-                                    <h4>오늘의 파크</h4>
-                                    <h5>운영시간</h5>
-                                    <h6>10:00 ~ 21:00</h6>
-                                </div>
-                                <div class="sub_box2">
-                                    <ul>
-                                        <li>어트랙션
-                                        </li>
-                                        <li>
-                                            페스티벌
-                                        </li>
-                                        <li>
-                                            공연
-                                        </li>
-                                        <li>
-                                            다이닝/쇼핑
-                                        </li>
-                                        <li>
-                                            다시만난월드: <br>캐릭터전시회
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sub_box3">
-                                    <h3><span>앱다운로드</span>로<br> 더 스마트하게!</h3>
-                                    <ul>
-                                        <li>• 모바일예매</li>
-                                        <li>• 모바일 티켓발권</li>
-                                        <li>• 매직패스 예약</li>
-                                    </ul>
-                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_img">
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>요금/우대혜택
-                        <div class="sub_wrap">
-                            <div class="sub_box">
-                                <div class="sub_box1">
-                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
-                                    <h3>2/17(목)</h3>
-                                    <h4>오늘의 파크</h4>
-                                    <h5>운영시간</h5>
-                                    <h6>10:00 ~ 21:00</h6>
-                                </div>
-                                <div class="sub_box2">
-                                    <ul>
-                                        <li>이용요금
-                                        </li>
-                                        <li>
-                                            이달의 혜택
-                                        </li>
-                                        <li>
-                                            연간이용
-                                        </li>
-                                        <li>
-                                            롯데월드카드
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sub_box3">
-                                    <h3><span>앱다운로드</span>로<br> 더 스마트하게!</h3>
-                                    <ul>
-                                        <li>• 모바일예매</li>
-                                        <li>• 모바일 티켓발권</li>
-                                        <li>• 매직패스 예약</li>
-                                    </ul>
-                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_img">
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>참여프로그램
-                        <div class="sub_wrap">
-                            <div class="sub_box">
-                                <div class="sub_box1">
-                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
-                                    <h3>2/17(목)</h3>
-                                    <h4>오늘의 파크</h4>
-                                    <h5>운영시간</h5>
-                                    <h6>10:00 ~ 21:00</h6>
-                                </div>
-                                <div class="sub_box2">
-                                    <ul>
-                                        <li>공연참여
-                                        </li>
-                                        <li>
-                                            가든스테이지 좌석 예약
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-                                <div class="sub_box3">
-                                    <h3><span>앱다운로드</span>로<br> 더 스마트하게!</h3>
-                                    <ul>
-                                        <li>• 모바일예매</li>
-                                        <li>• 모바일 티켓발권</li>
-                                        <li>• 매직패스 예약</li>
-                                    </ul>
-                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_img">
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>이용가이드
-                        <div class="sub_wrap">
-                            <div class="sub_box">
-                                <div class="sub_box1">
-                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
-                                    <h3>2/17(목)</h3>
-                                    <h4>오늘의 파크</h4>
-                                    <h5>운영시간</h5>
-                                    <h6>10:00 ~ 21:00</h6>
-                                </div>
-                                <div class="sub_box2">
-                                    <ul>
-                                        <li>운영/운휴
-                                        </li>
-                                        <li>
-                                            파크이용안내
-                                        </li>
-                                        <li>
-                                            편의시설/제도
-                                        </li>
-                                        <li>
-                                            오시는길
-                                        </li>
-                                        <li>
-                                            가이드맵
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="sub_box3">
-                                    <h3><span>앱다운로드</span>로<br> 더 스마트하게!</h3>
-                                    <ul>
-                                        <li>• 모바일예매</li>
-                                        <li>• 모바일 티켓발권</li>
-                                        <li>• 매직패스 예약</li>
-                                    </ul>
-                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_img">
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>소통서비스
-                        <div class="sub_wrap">
-                            <div class="sub_box">
-                                <div class="sub_box1">
-                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
-                                    <h3>2/17(목)</h3>
-                                    <h4>오늘의 파크</h4>
-                                    <h5>운영시간</h5>
-                                    <h6>10:00 ~ 21:00</h6>
-                                </div>
-                                <div class="sub_box2">
-                                    <ul>
-                                        <li>공지사항
-                                        </li>
-                                        <li>
-                                            FAQ
-                                        </li>
-                                        <li>
-                                            고객소리함
-                                        </li>
-                                        
-                                </div>
-                                <div class="sub_box3">
-                                    <h3><span>앱다운로드</span>로<br> 더 스마트하게!</h3>
-                                    <ul>
-                                        <li>• 모바일예매</li>
-                                        <li>• 모바일 티켓발권</li>
-                                        <li>• 매직패스 예약</li>
-                                    </ul>
-                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_img">
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </li>
-                </ul>
-                <ul id="header2_icon_menu">
-                    <li>
-                        <img src="icons/header_srch_btn.png" alt="">
-                        <h4>검색</h4>
-                    </li>
-                    <li>
-                        <img src="icons/reser_btn.png" alt="">
-                        <h4>예매</h4>
-                    </li>
-                    <li>
-                        <img src="icons/group_btn.png" alt="">
-                        <h4>단체</h4>
-                    </li>
-                    <li>
-                        <img src="icons/company_btn.png" alt="">
-                        <h4>기업체</h4>
-                    </li>
-                    <li>
-                        <img src="icons/product_btn.png" alt="">
-                        <h4>상품몰</h4>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-<!--  -->
-       <div id="slide">
-                <ul id="slide_img_box">
-                    <li><img src="images/main_slide1.jpg" alt=""></li>
-                    <li><img src="images/main_slide2.jpg" alt=""></li>
-                    <li><img src="images/main_slide3.jpg" alt=""></li>
-                    <li><img src="images/main_slide4.jpg" alt=""></li>
-                    <li><img src="images/main_slide5.jpg" alt=""></li>
-                    <li><img src="images/main_slide6.jpg" alt=""></li>
-                    <li><img src="images/main_slide7.jpg" alt=""></li>
-                    <li><img src="images/main_slide8.jpg" alt=""></li>
-
-                </ul>
-            <img src="icons/imgRoll_prev.png" alt="" id="slide_prev_btn">
-            <img src="icons/imgRoll_next.png" alt="" id="slide_next_btn">
-            <div id="slide_btn">
-                <ul>
-                    <li><img src="icons/imgRoll_indi_on.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                    <li><img src="icons/imgRoll_indi.png" alt=""></li>
-                </ul>
-                <div id="slide_pause">
-                    <img src="icons/play_bt.png" alt="">
+        <img src="images/236ba257d2e5d118eece1f4592d60896.png" alt="" id="popup_img">
+        <ul>
+            <li>
+                <div class="popup_li_img_box"><img src="images/da837ae08f868df94aea135f824b8af7.png" alt="">
                 </div>
-            </div>
-       </div> 
-<!--  -->
-            <div id="op_time">
-                <img src="icons/gnb_timeInfo_bg.png" alt="">
-                <h3>오늘의 파크 운영시간</h3>
-                <h4>10:00 ~ 21:00</h4>
-            </div>
-            <!--  -->
-        <div id="event">
-            <h2>
-                <span class="fw900">나에게 꼭 맞는 혜택</span>
-                <span class="fw100">알아볼까요?</span>
-            </h2>
-                <h4>현재 진행중인 할인 혜택을 알아보세요.</h4>
-                <ul>
-                    <li>
-                    <div class="event_cover">
-
-                    </div>
-                        <img src="images/event1.jpg" alt="">
-                        <h5>26,500원</h5>
-                        <h3>롯데월드 제휴카드 온라인 프로모션</h3>
-                        
-                    </li>
-                    <li>
-                    <div class="event_cover">
-
-                    </div>
-                        <img src="images/event2.jpg" alt="">
-                        <h5>29,500원</h5>
-                        <h3>제휴카드 현장 프로모션</h3>
-                        
-                    </li>
-                    <li>
-                    <div class="event_cover">
-
-                    </div>
-                        <img src="images/event3.jpg" alt="">
-                        <h5>22,222원</h5>
-                        <h3>신나는 2월, 설레는 2022년! 롯데월드카드 22 이벤트</h3>
-                        
-                    </li>
-                    <li>
-                        <div class="event_cover">
-
-                        </div>
-                        <img src="images/event4.jpg" alt="">
-                        <h5>28,500원</h5>
-                        <h3>해피 겨울방학</h3>
-                        
-                    </li>
-                </ul>
-                <button>더 많은 혜택 보기</button>
+                <h4>기초회화 1위</h4>
+            </li>
+            <li>
+                <div class="popup_li_img_box"><img src="images/aab5ffcb56c36625f6d90bd725cd33c1.png" alt="">
+                </div>
+                <h4>1대1 개인과외</h4>
+            </li>
+        </ul>
+    </div>
+    <header>
+        <!--  -->
+        <div id="pop_banner1">
+            <img src="images/img_banner_counsel_v2.1ae3e670.png" alt="">
         </div>
         <!--  -->
-        <div id="parade">
-            <h2> <span class="fw100">다양한 공연 및 퍼레이드</span><span class="fw900">정보를 한눈에!</span></h2>
-            <p>다양한 공연정보를 확인해보세요.</p>
+        <div id="pop_banner2">
+            <img src="icons/_-_03.png" alt="">
+        </div>
+        <!--  -->
+        <div id="header_box">
+        <h1 id="logo">
+            <img src="icons/logo.png" alt="">
+    </h1>
+        <div id="heaber_menu">
+            <ul>
+                <li>입학안내</li>
+                <li>야나두 영어</li>
+                <li>야나두 핏<img src="icons/KakaoTalk_20220126_105039401.png" alt=""></li>
+                <li>야나두 클래스</li>
+                <li>이벤트</li>
+            </ul>
+        </div>
+        <div id="heaber_login">
+            <ul>
+                <li><img src="icons/header_cart.png" alt=""></li>
+                <li>로그인</li>
+            </ul>
+            
+        </div>
+    </div>
+ </header>
+    <!--  -->
+    <div id="fixde_area"></div>
+    <div id="slide">
+        <div id="slide_box">
+            <img src="icons/mainslide_prev.png" alt="" id="priv_btn">
+            <img src="icons/mainslide_next.png" alt="" id="next_btn">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+    </div>
+    <!--  -->
+    <div id="university">
+        <div id="university_box">
+            <h2>대학 그 이상의 배움,<br>Yanadoo University에 입학하세요</h2>
+            <p>150만 성공 노하우를 가진 야나두와 함께<br>
+                당신의 제 2의 멋진 인생을 시작해보세요
+            </p>
             <ul>
                 <li>
-                    <img src="images/202012291024150880_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                        로티스 어드벤처 퍼레이드
-                        </h4>
-                    </div>
-                </li>
+                    <h4>
+                    Yanadoo University가<br>
+                    궁금해요
+                    </h4>
+                <img src="icons/university_btn.png" alt="">
+                    </li>
                 <li>
-                    <img src="images/202201100144320930_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            로티의 라이브 쇼!쇼!쇼!
-                        </h4>
-                    </div>
-                </li>
+                    <h4>입학생 전용<br>
+                    프리미엄 혜택
+                    </h4>
+                <img src="icons/university_btn.png" alt="">
+                    </li>
                 <li>
-                    <img src="images/202102081217495590_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            민속 한마당
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/202105120228067320_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            로티로리 송 앤 댄스2 
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/202102151212017690_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            엘비스 밴드 쇼
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/201912270455349210_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            빅 밴드 쇼
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/202012310613493800_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            캐릭터 환타지아
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/201912020120211100_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            로티의 모험2 : 사이버 어드벤처
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/201912230542317240_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            렛츠 드림 나이트 퍼레이드
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/202008050444485270_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            매직캐슬 라이츠업
-                        </h4>
-                    </div>
-                </li>
-                <li>
-                    <img src="images/201906250408247370_276.jpg" alt="">
-                    <div class="gradiant_box">
-                        <h4>
-                            미라클 나이트
-                        </h4>
-                    </div>
-                </li>
+                    <h4>입학생 필수<br>
+                    자기계발 클래스
+                     </h4>
+                <img src="icons/university_btn.png" alt="">
+                     </li>
             </ul>
-            <div id="parade_drag">
-                <img src="icons/drag.png" alt="">
-                <div class="drag_line"></div>
+        <div id="university_box_img">
+            <img src="images/bg_university_book.a853e16c.png" alt="">
             </div>
-            <button id="parade_bt1">
-                더 많은 공연 보기
-            </button>
-            <button id="parade_bt2">
-                참여 프로그램 보기
-            </button>
         </div>
-        <!--  -->
-        <div id="attration">
-            <h2>재미있고 즐거운 <span class="fw900">다양한 어트랙션!</span></h2>
-            <div id="attration_bt">
-            <button id="attration_bt1">아이와함께</button>
-            <button id="attration_bt2">야외에서신나게</button>
-            <button id="attration_bt3">실내에서 쾌적하게</button>
-        </div>
-        <div id="attration_box">
-            <ul id="attration_box1">
+    </div>
+    <!--  -->
+    <div id="best_product">
+        <div id="best_product_box1">
+            <h2>[150만 회원 PICK] BEST 영어 클래스</h2>
+            <ul>
                 <li>
-                    <img src="images/202010231014353460.jpg" alt="">
-                <h4>언더씨킹덤</h4>
-                <p>아이와 함께 떠나는 해저왕국 탐험!</p>
+                <img src="images/thumb_firstSale.png" alt="">
+                <h4>2022년 첫 세일 78% 할인</h4>
+                <h5>#사상최대 #파격할인 #장학금</h5>
             </li>
-                
-            <li>
-                    <div></div>
-                <h4>유레카</h4>
-                <p>높이높이 날아올라요~</p>
+                <li>
+                <img src="images/1001868_1641466140032.png" alt="">
+                <h4>기초회화 1위 영어 왕초보 마스터</h4>
+                <h5>#150만성공패턴 #올인원</h5>
             </li>
-                
-            <li>
-                    <img src="images/202006241107064920.jpg" alt="">
-                <h4>점핑피쉬</h4>
-                <p>신나는 해저여행</p>
+                <li>
+                <img src="images/1000847_1641466919083.png" alt="">
+                <h4>딱 90일만에 원어민과 말문트기</h4>
+                <h5>#기초회화 #하루10분 #왕초보탈출</h5>
             </li>
-                
-            <li>
-                    <img src="images/20180619061904008.jpg" alt="">
-                <h4>스윙팡팡</h4>
-                <p>로티와 친구들이 함께 팡팡~</p>
+                <li>
+                <img src="images/1002009_1641466978002.png" alt="">
+                <h4>150만 영포자의 말문을 트여준 패턴영어</h4>
+                <h5>#원예나따라하기 #패턴학습</h5>
             </li>
-                
-            <li>
-                    <img src="images/202006241108538410.jpg" alt="">
-                <h4>매직붕붕카</h4>
-                <p>헨젤과 그레텔을 구해주세요!</p>
+            </ul>
+        </div>
+        <div id="best_product_box2">
+            <h2>[웰컴 2022] 올해 주목할 만한 클래스</h2>
+            <ul>
+                <li>
+                <img src="images/thumb_yafit_free_211222.png" alt="">
+                <h4>딱 한 달만 무료로 타 볼까?</h4>
+                <h5>#야핏사이클 #한달앱이용료0원</h5>
             </li>
-                
-            <li>
-                    <img src="images/202007241119261500.jpg" alt="">
-                <h4>키즈토리아</h4>
-                <p>마음껏 즐길수 있는 거대한 동화속 세상</p>
+                <li>
+                <img src="images/1000848_1641466948861.png" alt="">
+                <h4>현지 올로케! 진짜 미국 영어</h4>
+                <h5>#실전영어 #미국현지 #원어민표현</h5>
+            </li>
+                <li>
+                <img src="images/1000853_1641467073567.png" alt="">
+                <h4>
+                    연봉 수직상승! 비즈니스 영어 90일 완성</h4>
+                <h5>
+                    #비즈니스영어 #직장인 #응급키트</h5>
+            </li>
+                <li>
+                <img src="images/1000851_1641467029652.png" alt="">
+                <h4>200개로 끝내는 원어민 필수표현</h4>
+                <h5>#리얼상황 #셀럽원어민영어</h5>
             </li>
             </ul>
 
-             <ul id="attration_box2">
-                <li>
-                    <img src="images/atb2-1.jpg" alt="">
-                <h4>자이로스핀</h4>
-                <p>자이로 시리즈 3번째!</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb2-2.jpg" alt="">
-                <h4>혜성특급</h4>
-                <p>특급열차와 함께 떠나요</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb2-3.jpg" alt="">
-                <h4>자이로스윙</h4>
-                <p>자유낙하와 회전을 동시에</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb2-4.jpg" alt="">
-                <h4>아틀란티스</h4>
-                <p>어트렉션의 혁명 최고의 스릴</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb2-5.jpg" alt="">
-                <h4>번지드롭</h4>
-                <p>번지점프의 짜릿한 묘미!</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb2-6.jpg" alt="">
-                <h4>회전그네</h4>
-                <p>빙글 빙글 멈출 수 없는 재미</p>
-            </li>
-            </ul>
-            <ul id="attration_box3">
-                <li>
-                    <img src="images/atb3-1.jpg" alt="">
-                <h4>후룸라이드</h4>
-                <p>색다른모험,쥬라기시대로</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb3-2.jpg" alt="">
-                <h4>신밧드의모험</h4>
-                <p>신비한 모험을 함께 떠나요~</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb3-3.jpg" alt="">
-                <h4>파라오의 분노</h4>
-                <p>실감나는 라이드를 즐기자!</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb3-4.jpg" alt="">
-                <h4>스페인 해적선</h4>
-                <p>거친 파도와 같은 아찔함</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb3-5.jpg" alt="">
-                <h4>후렌치 레볼루션</h4>
-                <p>숨막히는 롤러코스터</p>
-            </li>
-                
-            <li>
-                    <img src="images/atb3-6.jpg" alt="">
-                <h4>범퍼카</h4>
-                <p>좌충우돌 부딪히는 즐거운 소리</p>
-            </li>
-            </ul>
         </div>
-            <button id="attration_morebt1">더 많은 어트랙션 보기</button>
-            <button id="attration_morebt2">운휴 정보 보러가기</button>
-        </div>
-        <!--  -->
-        <div id="special">
-            <div id="special_title">
-                <h2>롯데월드를 좀 더</h2>
-                <h3>특별하게 즐기고 싶다면!</h3>
-                <p>오늘 롯데월드의 소식을 만나보세요.</p>
-            </div>
-            <div id="special_list">
-                <h4>특별한 경험</h4>
+
+    </div>
+    <!--  -->
+        <div id="banner1">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+</div>
+<!--  -->
+            <div id="top3">
+                <h2>[HOT] 실시간 TOP3 패키지</h2>
                 <ul>
                     <li>
-                        <img src="images/mainCon4_img3_20211231.jpg" alt="">
-                        <p>샤론캣 프리미엄라운지</p>
-                    </li>
-                    <li>
-                        <img src="images/mainCon4_img2.jpg" alt="">
-                        <p>롯데월드 어드벤처 선물권</p>
-                    </li>
-                    <li>
-                        <img src="images/mainCon4_img1.jpg" alt="">
-                        <p>연간이용안내</p>
-                    </li>
-                    <li>
-                        <img src="images/maincon4_covid.jpg" alt="">
-                        <p>코로나19 예방 접종안내</p>
-                    </li>
-                </ul>
-            </div>
-            <div id="special_news">
-                <h3>롯데월드 소식</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <p>코로나19 예방을 위한 롯데월드 어드벤처 종합안내
+                        <div id="top3_box1">
+                            <h4>
+                                2022년 영어 새 출발 지원 사상 최대 혜택과 파격할인! 지금이 영어 시작 절호의 기회
 
-                            </p>
-                        </td>
-                        <td>2020.08.11</td>
-                    </tr>
-                    <tr>
-                        <td>공연참여 프로그램 운영 안내</td>
-                        <td>2021.12.17</td>
-                    </tr>
-                    <tr>
-                        <td>롯데월드 로티프렌즈 색칠놀이</td>
-                        <td>2021.10.26</td>
-                    </tr>
-                    <tr>
-                        <td>월드 카트레이싱 GRAND OPEN</td>
-                        <td>2021.06.10</td>
-                    </tr>
-                    
-                </table>
-            </div>
-            <div id="special_mobile">
-                <img src="images/201912060405241830.jpg" alt="">
-            </div>
+                            </h4>
+                            <button>
+                                패키지 클래스 보기
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="top3_box2">
+                            <h4>
+                                150만 영포자의 말문을 트여준 야나두 대표강사 원예나의 패턴 영어
 
-        </div>
-        <!--  -->
-        <footer>
-            <div id="footer_top_bt_quick">
-                <h4>quick</h4>
-            </div>
-            <div id="footer_top_bt">
-                TOP<div></div>
-            </div>
-            
-            <div id="footer1">
-                <ul id="footer1_menu1">
-                    <li>롯데월드 소개</li>
-                    <li>기업 제휴 및 입점 문의</li>
-                    <li>이용약관</li>
-                    <li>개인정보처리방침</li>
-                    <li>이메일무단수집거부</li>
-                    <li>Compliance Program</li>
-                    <li>사이트맵</li>
-                    <li>인재채용</li>
-                    <li>그룹PR</li>
-                </ul>
-                <ul id="footer1_menu2">
-                    <li><img src="icons/sns_btn1.png" alt=""></li>
-                    <li><img src="icons/sns_btn2.png" alt=""></li>
-                    <li><img src="icons/sns_btn3.png" alt=""></li>
+                            </h4>
+                            <button>
+                                패키지 클래스 보기
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="top3_box3">
+                            <h4>
+                                1년에 딱 한번, 설 파격 혜택을 놓치지 마세요
+                            </h4>
+                            <button>
+                                패키지 클래스 보기
+                            </button>
+                        </div>
+                    </li>
                 </ul>
             </div>
-            <div id="footer2">
-                <h3 id="footer_logo">
-                    <img src="icons/footer_logo.png" alt="">
-                </h3>
-                <div id="footer_center">
-                    <ul id="footer_center_text1">
-                        <li>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드
+            <!--  -->
+            <div id="today">
+                <h2>[TODAY 추천] 지금 당신을 성장시킬 클래스</h2>
+                <ul>
+                    <li>
+                    <img src="images/1000853_1641467073567.png" alt="">
+                    <h4>
+                    연봉 수직상승! 비즈니스 영어 90일 완성
+                        </h4>
+                    <h5>
+                        #비즈니스영어 #직장인 #응급키트
+                            </h5>
                         </li>
-                        <li>대표자 : 최홍훈</li>
-                    </ul>
-                    <ul id="footer_center_text2">
-                        <li>사업자등록번호 : 219-85-00014</li>
-                        <li>통신판매업신고번호 : 송파 제5513호</li>
-                        <li>전화 : 1661-2000</li>
-                    </ul>
-                    <p>COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</p>
-                    <ul id="footer_center_text3">
-                        <img src="icons/isms_icon.png" alt="">
-                        <li>인증범위</li>
-                        <li>온라인 예매 서비스운영(롯데월드)</li>
-                    </ul>
-                    <ul id="footer_center_text4">
-                        <li>유효기간</li>
-                        <li>2020.11.18~2023.11.17</li>
-                    </ul>
-                    <ul id="footer_center_text5">
-                        <li>한국서비스대상 명예의전당
+                    <li>
+                    <img src="images/thumb_1642152850126.png" alt="">
+                    <h4>
+                        시작하는 투자자를 위한 재테크 가이드 <돈 모으기부터 불리기까지>
+                        </h4>
+                    <h5>
+                        #재테크 #국내주식 #미국주식
+                            </h5>
                         </li>
-                        <img src="icons/footer_logo2.png" alt="">
+                    <li>
+                    <img src="images/17_1637912614023.png" alt="">
+                    <h4>
+                        퇴근 후 월 2백 더 버는 <무자본으로 시작하는 부업>
+                        </h4>
+                    <h5>
+                        #직장인 부업 #무자본 #창업성공
+                            </h5>
+                        </li>
+                    <li>
+                    <img src="images/18_1637912631804.png" alt="">
+                    <h4>
+                        초고속 승진! 일잘러가 되는 실무 스킬업
+                        </h4>
+                    <h5>
+                        #비즈니스커뮤니케이션 #엑셀 #PPT
+                            </h5>
+                        </li>
+                </ul>
+            </div>
+            <!--  -->
+            <div id="banner2">
+                <img src="images/norbnr_bottom_pc_yafit_premium.png" alt="">
+            </div>
+            <!--  -->
+            <div id="story">
+                    <div id="story_box">
+                        <h2>야나두 리얼 영어 성장 스토리 "야, 나두 했어"</h2>
+                        <ul>
+                            <li>
+                            <img src="images/img_media_thumb_kkb.png" alt="">
+                            <h4>배우 김기방</h4>
+                                
+                            <h5>김기방의 좋은 아빠되기 프로젝트</h5>
+                                
+                        </li>
+                            <li>
+                            <img src="images/img_media_thumb_yjh_interview.png" alt="">
+                            <h4>미스코리아 유지형</h4>
+
+                            <h5>유지형의 1년 Before & After</h5>
+
+                        </li>
+                            <li>
+                            <img src="images/img_media_thumb_mhg.jpg" alt="">
+                            <h4>수강생 민혜경</h4>
+
+                            <h5>지금도 늦지 않은 영어 도전기</h5>
+
+                        </li>
+                        </ul>
+                    </div>
+            </div>
+            <!--  -->
+            <div id="event">
+                <h2>진행중인 인기 이벤트</h2>
+                <h3>이벤트 전체 보기</h3>
+                <ul>
+                    <li>
+                        <div id="event_box1"></div>
+                        <h4>지금, 무료로 야핏 앱 다운로드 받으세요!</h4>
+                        <h5>2021-12-29 ~ 2022-03-31</h5>
+                    </li>
+                    <li>
+                        <div id="event_box2"></div>
+                        <h4>유캔두잇 챌린지</h4>
+                        <h5>2021-11-23 ~ 2022-05-31</h5>
+                    </li>
+                </ul>
+            </div>
+            <!--  -->
+            <div id="category">
+                <div id="category_box">
+                    <div id="category_box_left">
+                        <h4>클래스 카테고리</h4>
+                        <h3>영어/<span>피트니스</span>/주식/부동산/N잡러<br>실무스킬/영상크리에이터</h3>
+                        <img src="icons/university_btn.png" alt="" id="category_box_bt">
+                    </div>
+                    <img src="images/img_home_category_02_540x540.51654446.png" alt="" id="category_box_left_img">
+                </div>
+            </div>
+            <!--  -->
+            <footer>
+                <div id="footer_left">
+                    <img src="icons/logo.png" alt="">
+                    <h2>1600.0563</h2>
+                    <ul id="footer_left_text1">
+                        <li>평일 : 09:00 ~ 18:00</li>
+                        <li>점심시간 : 12:00 ~ 13:00</li>
+                        <li>제휴문의 : yanadoo02@yanadoo.co.kr</li>
+                        <h4>회사소개•개인정보•처리방침•이용약관•공고사항</h4>
+                        <ul id="footer_left_text2">
+                            <li>주식회사 야나두 (야나두 원격평생교육원)</li>
+                            <li>사업자등록번호 129-86-23477 · 통신판매업 신고번호 제2018-서울강남-02139호</li>
+                            <li>대표 김정수, 김민철 · 개인정보보호 책임자 정호용</li>
+                            <li>주소 서울시 강남구 영동대로 96길 26, 3, 4층 (삼성동, Place 1)</li>
+                            <li>원격 평생교육 시설신고 서울특별시 강남 서초교육지원청 (제 원516호)</li>
+                        </ul>
                     </ul>
                 </div>
                 <div id="footer_right">
-                    <select name="" id="lang">
-                        <option value="">계열사 관련사이트</option>
-                        <option value="">롯데그룸
+                    <ul id="footer_right_box1">
+                        <h4>고객센터</h4>
+                        <li>고객센터 바로가기</li>
+                        <li>자주 묻는 질문</li>
+                        <li>1:1 문의하기</li>
+                    </ul>
+                    <ul id="footer_right_box2">
+                        <h4>카카오톡 상담</h4>
+                        <li>@야나두 친구추가</li>
+                    </ul>
+                    <ul id="footer_right_box3">
+                        <h4>제휴 및 단체수강 문의</h4>
+                        <li>B2B 및 단체수강 소개</li>
+                        <li> 제휴문의</li>
+                        <li>단체 수강 문의</li>
+                    </ul>
+                    <select name="" id="footer_bt">
+                        <option value="">
+                        Related Sites
                         </option>
-                        <option value="">L POINT
+                        <option value="">
+                            야나두
                         </option>
-                        <option value="">롯데그룹채용
-                        </option>
-                        <option value="">롯데제과
-
-                        </option>
-                        <option value="">롯데칠성음료
-
-                        </option>
-                        <option value="">롯데리아
-
-                        </option>
-                        <option value="">엔제리너스
-
-                        </option>
-                        <option value="">나뚜루
-
-                        </option>
-                        <option value="">크리스피크림도넛
-
-                        </option>
-                        <option value="">롯데푸드
-
-                        </option>
-                        <option value="">롯데아사히주류
-
-                        </option>
-                        <option value="">롯데유통사업본부
-
+                        <option value="">
+                            유캔두
                         </option>
                     </select>
-                    <div id="footer_last_img">
-                        <img src="images/img_lotteon_pc.jpg" alt="">
-                    </div>
+                    <ul id="footer_right_sns1">
+                        <li><img src="icons/etc_icon1.png" alt=""></li>
+                        <li><img src="icons/etc_icon2.png" alt=""></li>
+                    </ul>
+                    <ul id="footer_right_sns2">
+                        <li><img src="icons/sns1.png" alt=""></li>
+                        <li><img src="icons/ico_band_70x70.34ae136a.png" alt=""></li>
+                        <li><img src="icons/sns2.png" alt=""></li>
+                        <li><img src="icons/sns3.png" alt=""></li>
+                    </ul>
                 </div>
-            </div>
-
-        </footer>
-        <h1 id="sc">
-            0
-        </h1>
+            </footer>
 </body>
 </html>
